@@ -1,0 +1,359 @@
+:root {
+  color-scheme: light;
+  --navy: #0b1b36;
+  --navy-2: #10294d;
+  --blue: #1479c9;
+  --cyan: #42c1e8;
+  --ink: #18253b;
+  --muted: #65738a;
+  --line: #e4eaf1;
+  --pale: #f5f8fc;
+  --green: #179a79;
+  --font: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body { margin: 0; color: var(--ink); font-family: var(--font); background: #fff; -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+.section { padding-block: 105px; }
+
+.site-header { position: sticky; z-index: 20; top: 0; height: 78px; background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(220,228,238,.75); backdrop-filter: blur(14px); }
+.nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; direction: ltr; flex-shrink: 0; }
+.brand-logo { width: 43px; height: 43px; object-fit: contain; border-radius: 5px; }
+.brand-copy { display: grid; gap: 0; color: #073b79; line-height: 1.1; }
+.brand-copy strong { font: 800 21px "Alexandria", sans-serif; letter-spacing: 1.6px; }
+.brand-copy small { font: 500 6px "Alexandria", sans-serif; letter-spacing: .65px; color: #6b7c91; }
+.main-nav { display: flex; align-items: center; gap: 31px; font-size: 13px; color: #536178; }
+.main-nav a { transition: color .2s; }
+.main-nav a:hover { color: var(--blue); }
+.button { border: 0; min-height: 52px; padding: 0 23px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; font-size: 13px; font-weight: 700; transition: transform .22s, box-shadow .22s, background .22s, color .22s; }
+.button:hover { transform: translateY(-2px); }
+.button-small { min-height: 41px; padding-inline: 16px; font-size: 12px; }
+.button-outline { border: 1px solid #cbd7e4; color: var(--navy); background: #fff; }
+.button-outline:hover { border-color: var(--blue); color: var(--blue); box-shadow: 0 8px 24px #0b1b3610; }
+.button-primary { color: #fff; background: linear-gradient(105deg, #1684cf, #0d65ae); box-shadow: 0 10px 22px #1077bf2e; }
+.button-primary:hover { box-shadow: 0 13px 28px #1077bf42; }
+.button-whatsapp { background: #eaf8f4; color: #16886f; }
+.button-whatsapp:hover { background: #dff4ee; }
+.whatsapp-icon { font-size: 17px; }
+.menu-toggle { display: none; }
+
+.hero { background: radial-gradient(ellipse at 84% 40%, #e7f6fc 0, #f1f8fc 23%, transparent 55%), linear-gradient(110deg, #fff 38%, #f8fbfe); padding-block: 78px 0; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 56px; min-height: 520px; }
+.hero-copy { padding-bottom: 31px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #1676b9; font-size: 11px; font-weight: 700; letter-spacing: .2px; }
+.eyebrow-dot { width: 7px; height: 7px; display: inline-block; border-radius: 50%; background: #2bb3de; box-shadow: 0 0 0 4px #2bb3de1a; }
+.hero h1 { max-width: 570px; margin: 23px 0 18px; color: var(--navy); font: 700 clamp(35px, 4vw, 49px)/1.5 "Alexandria", var(--font); letter-spacing: -.8px; }
+.hero h1 span, .section-heading h2 span, .faq-intro h2 span { color: #1987ce; }
+.hero-copy > p { max-width: 525px; margin: 0; color: #64738a; font-size: 15px; line-height: 2.05; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+.hero-proof { display: flex; align-items: center; gap: 9px; margin-top: 35px; color: #627189; font-size: 10px; }
+.proof-avatars { display: flex; direction: ltr; padding-left: 5px; }
+.proof-avatars span { width: 25px; height: 25px; border: 2px solid #fff; border-radius: 50%; display: grid; place-items: center; margin-left: -6px; background: #c5e5ef; color: #235774; font-size: 9px; font-weight: 700; }
+.proof-avatars span:nth-child(2) { background: #e7d7c7; color: #785742; }
+.proof-avatars span:nth-child(3) { background: #d3e4f6; color: #39739e; }
+.proof-separator { height: 17px; margin-inline: 5px; border-left: 1px solid #d6dfe8; }
+.proof-check { color: var(--green); font-weight: 700; }
+.hero-visual { position: relative; display: grid; place-items: center; min-height: 470px; isolation: isolate; }
+.visual-glow { position: absolute; z-index: -1; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, #cbeef8 0, #e3f5fa 42%, #f1f9fc00 71%); }
+.orbit { position: absolute; border: 1px solid #c6e1eea8; border-radius: 50%; transform: rotate(-24deg); }
+.orbit-one { width: 470px; height: 235px; }
+.orbit-two { width: 490px; height: 300px; transform: rotate(38deg); }
+.dashboard { width: min(100%, 475px); overflow: hidden; border: 1px solid #dfe8f1; border-radius: 12px; background: #fff; box-shadow: 0 32px 72px #16395620, 0 5px 17px #1639560e; transform: perspective(1200px) rotateY(-5deg) rotateX(2deg); animation: dashboard-in .8s ease-out both; }
+@keyframes dashboard-in { from { opacity: 0; transform: perspective(1200px) translateY(18px) rotateY(-5deg); } to { opacity: 1; transform: perspective(1200px) translateY(0) rotateY(-5deg) rotateX(2deg); } }
+.dash-topbar { height: 43px; display: flex; align-items: center; justify-content: space-between; padding-inline: 15px; border-bottom: 1px solid #edf1f6; }
+.dash-brand { display: flex; align-items: center; gap: 5px; direction: ltr; font: 700 10px "Alexandria", sans-serif; color: #162d4b; }
+.dash-brand i { width: 8px; height: 8px; display: inline-block; border-radius: 3px; background: #26a8dc; }
+.dash-brand small { color: #8a9aaf; font-size: 7px; }
+.dash-tools { display: flex; align-items: center; gap: 12px; }
+.dash-tools span { position: relative; width: 13px; height: 13px; border: 1px solid #afbdcb; border-radius: 50%; }
+.dash-tools span:nth-child(2) { border-radius: 3px; }
+.dash-tools b { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: #d9f0f6; color: #267b9b; font-size: 8px; }
+.dash-body { display: flex; min-height: 335px; }
+.dash-sidebar { width: 43px; flex: 0 0 43px; display: flex; flex-direction: column; align-items: center; gap: 17px; padding-top: 19px; border-left: 1px solid #edf1f6; color: #9babc0; font-size: 14px; }
+.dash-sidebar span { width: 25px; height: 25px; display: grid; place-items: center; }
+.dash-sidebar .side-active { border-radius: 6px; background: #e9f7fb; color: #219ecb; }
+.dash-content { flex: 1; min-width: 0; padding: 17px 17px 12px; }
+.dash-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; }
+.dash-heading div { display: grid; gap: 4px; }
+.dash-heading small { color: #99a6b7; font-size: 7px; }
+.dash-heading b { color: #233650; font-size: 12px; }
+.dash-filter { border: 1px solid #e8edf2; border-radius: 4px; padding: 5px 7px; color: #6d7c90; font-size: 7px; }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.stat-card { min-height: 75px; position: relative; overflow: hidden; padding: 8px 9px; border: 1px solid #edf1f5; border-radius: 5px; }
+.stat-card small { display: block; color: #8997a9; font-size: 7px; white-space: nowrap; }
+.stat-card b { display: block; margin-top: 4px; color: #243a56; font: 700 14px "Alexandria", sans-serif; }
+.stat-card em { display: block; color: #179c7a; font-size: 7px; font-style: normal; }
+.stat-card em.neutral { color: #5f93ba; }
+.mini-bars { position: absolute; left: 8px; bottom: 8px; height: 25px; width: 37px; display: flex; align-items: flex-end; gap: 2px; opacity: .8; }
+.mini-bars i { width: 4px; border-radius: 2px 2px 0 0; height: 35%; background: #5bc5d8; }
+.mini-bars i:nth-child(2) { height: 54%; }.mini-bars i:nth-child(3) { height: 40%; }.mini-bars i:nth-child(4) { height: 72%; }.mini-bars i:nth-child(5) { height: 51%; }.mini-bars i:nth-child(6) { height: 84%; }.mini-bars i:nth-child(7) { height: 100%; background: #299bd3; }
+.mini-bars.second i { background: #a9cfee; }.mini-bars.second i:nth-child(7) { background: #69aee0; }
+.stock-line { position: absolute; left: 8px; bottom: 16px; width: 40px; height: 4px; border-radius: 5px; background: #e8f1f6; }
+.stock-line i { display: block; width: 86%; height: 100%; border-radius: inherit; background: #44bca4; }
+.chart-card { height: 155px; margin-top: 10px; padding: 9px 10px 6px; border: 1px solid #edf1f5; border-radius: 5px; }
+.chart-title { display: flex; justify-content: space-between; color: #344860; font-size: 8px; }
+.chart-title small { color: #98a5b5; font-size: 7px; }
+.chart-wrap { height: 121px; position: relative; padding: 9px 0 17px 35px; background: repeating-linear-gradient(to bottom, transparent 0, transparent 28px, #f0f3f7 29px); }
+.chart-wrap svg { width: 100%; height: 95px; overflow: visible; }
+.chart-labels { position: absolute; left: 0; top: 5px; bottom: 23px; display: flex; flex-direction: column; justify-content: space-between; color: #a5afbd; font: 6px "Alexandria", sans-serif; }
+.chart-months { position: absolute; left: 35px; right: 0; bottom: 1px; display: flex; justify-content: space-between; color: #a5afbd; font-size: 6px; }
+.activity-line { display: flex; align-items: center; gap: 7px; padding-top: 9px; color: #79879a; font-size: 7px; }
+.activity-line b { margin-right: auto; font-weight: 400; color: #a5b0bd; }
+.activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #43b99e; box-shadow: 0 0 0 3px #43b99e1c; }
+.float-icon { position: absolute; z-index: 2; display: grid; place-items: center; border: 1px solid #ffffffb5; border-radius: 12px; background: #fff; color: #238cc8; box-shadow: 0 12px 28px #0d41661c; }
+.float-box { top: 48px; right: 8px; width: 46px; height: 46px; font-size: 22px; transform: rotate(8deg); }
+.float-chart { bottom: 38px; left: 11px; width: 42px; height: 42px; border-radius: 50%; color: #1b9b82; font-size: 20px; }
+.visual-caption { position: absolute; right: 0; bottom: 5px; display: flex; align-items: center; gap: 10px; padding: 11px 15px; border: 1px solid #e7eef4; border-radius: 8px; background: #ffffffed; box-shadow: 0 9px 25px #1738540e; }
+.visual-caption > span { color: #e8a33a; font-size: 18px; }
+.visual-caption div { display: grid; gap: 3px; }
+.visual-caption b { color: #263b55; font-size: 9px; }
+.visual-caption small { color: #8a97a8; font-size: 8px; }
+.hero-bottom { display: flex; align-items: center; gap: 15px; padding-block: 22px; border-top: 1px solid #e8eff4; color: #8794a5; font-size: 10px; }
+.hero-line { width: 45px; border-top: 1px solid #b7c8d7; }
+
+.packages-section { background: #f7f9fc; }
+.section-heading { margin: 0 auto 37px; text-align: center; }
+.section-heading h2, .faq-intro h2 { margin: 13px 0 9px; color: var(--navy); font: 700 clamp(29px, 3vw, 38px)/1.5 "Alexandria", var(--font); }
+.section-heading > p { margin: 0; color: #748197; font-size: 13px; line-height: 1.9; }
+.billing-note { max-width: max-content; margin: 0 auto 25px; display: flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid #e3edf4; border-radius: 6px; background: #fff; color: #718094; font-size: 10px; }
+.note-icon { display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid #64b6d7; border-radius: 50%; color: #2993c3; font-size: 10px; font-weight: 700; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 19px; }
+.plan-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 25px 23px 19px; border: 1px solid #e2e8ef; border-radius: 10px; background: #fff; box-shadow: 0 5px 19px #10294d08; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.plan-card:hover { transform: translateY(-6px); border-color: #b7d7e9; box-shadow: 0 20px 40px #10294d12; }
+.plan-featured { border: 1.5px solid #2c9bd1; box-shadow: 0 10px 35px #1e8cc31c; }
+.plan-featured:hover { border-color: #1484c3; box-shadow: 0 22px 45px #1e8cc32a; }
+.plan-ribbon { position: absolute; top: -12px; right: 50%; transform: translateX(50%); white-space: nowrap; padding: 5px 14px; border-radius: 20px; background: #147dbb; color: #fff; font-size: 9px; font-weight: 700; box-shadow: 0 5px 12px #147dbb35; }
+.plan-topline { display: flex; justify-content: space-between; align-items: center; }
+.plan-number { color: #92a5b9; font: 600 11px "Alexandria", sans-serif; letter-spacing: 1px; }
+.plan-audience { max-width: 75%; color: #718096; font-size: 10px; text-align: left; }
+.plan-card h3 { margin: 14px 0 2px; color: var(--navy); font: 700 26px "Alexandria", sans-serif; }
+.plan-description { min-height: 40px; margin: 0; color: #8490a1; font-size: 10px; line-height: 1.8; }
+.price-block { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; }
+.price-block strong { color: #152744; font: 700 29px "Alexandria", sans-serif; letter-spacing: -.7px; direction: ltr; }
+.price-block > span { color: #7f8da0; font-size: 9px; }
+.price-block i { color: #bac3ce; font-style: normal; }
+.plan-divider { margin-block: 17px 13px; border-top: 1px solid #edf0f4; }
+.features-title { margin: 0 0 10px; color: #34445a; font-size: 10px; font-weight: 700; }
+.feature-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; color: #647287; font-size: 10px; line-height: 1.65; }
+.feature-list li { display: flex; gap: 8px; align-items: flex-start; }
+.feature-check { flex: 0 0 15px; width: 15px; height: 15px; display: grid; place-items: center; margin-top: 1px; border-radius: 50%; background: #e8f6f2; color: #1b9c7d; font-size: 9px; font-weight: 700; }
+.hosting-preview { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px; margin-top: auto; padding-top: 17px; color: #8692a3; font-size: 9px; }
+.hosting-preview b { color: #526278; font-size: 9px; font-weight: 600; }
+.year-total { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 9px; padding: 10px; border-radius: 6px; background: #f2f8fb; color: #50647b; font-size: 9px; }
+.year-total b { color: #176c9f; font: 700 13px "Alexandria", sans-serif; direction: ltr; white-space: nowrap; }
+.year-total small { color: #66869c; font-size: 9px; font-weight: 500; }
+.button-card { margin-top: 13px; border: 1px solid #cedae5; color: #253c57; background: white; }
+.button-card:hover { border-color: #2085c3; color: #1579b7; background: #f8fcff; }
+.plan-card .button { width: 100%; min-height: 45px; justify-content: space-between; padding-inline: 14px; font-size: 11px; }
+.plan-price-foot { min-height: 29px; margin-top: 8px; color: #8a96a5; font-size: 8px; line-height: 1.7; text-align: center; }
+.hosting-footnote { margin: 17px 0 0; color: #8290a2; font-size: 9px; line-height: 1.8; text-align: center; }
+.custom-note { display: flex; align-items: center; gap: 13px; margin-top: 25px; padding: 17px 19px; border: 1px solid #e5eaf1; border-radius: 8px; background: #fff; }
+.custom-icon { color: #168ac6; font-size: 20px; }
+.custom-note p { flex: 1; margin: 0; color: #718094; font-size: 10px; line-height: 1.9; }
+.custom-note p b { color: #263a52; }
+.custom-note > a { flex: 0 0 auto; color: #187eb7; font-size: 10px; font-weight: 700; }
+.custom-note > a span { margin-right: 4px; }
+
+.comparison-section { background: #fff; }
+.comparison-wrap { overflow: hidden; border: 1px solid #e3e9f0; border-radius: 9px; box-shadow: 0 8px 30px #1a375508; }
+.comparison-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 11px; }
+.comparison-table th, .comparison-table td { padding: 14px 12px; border-bottom: 1px solid #edf0f4; }
+.comparison-table thead th { padding-block: 17px; background: #f7f9fc; color: #233650; font: 600 13px "Alexandria", var(--font); }
+.comparison-table thead th:first-child { width: 29%; text-align: right; font: 600 11px var(--font); color: #66768c; }
+.comparison-table tbody th { color: #43546b; text-align: right; font-weight: 600; }
+.comparison-table tbody td { color: #66758a; }
+.comparison-table tr:last-child th, .comparison-table tr:last-child td { border-bottom: 0; }
+.comparison-table .compare-featured { background: #f0f8fc; }
+.comparison-table thead .compare-featured { color: #1379b7; }
+.comparison-table thead .compare-featured span { display: block; margin-top: 4px; color: #59a0c5; font: 500 8px var(--font); }
+.included { display: inline-grid; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: #e8f6f1; color: #179875; font-size: 11px; font-weight: 700; }
+.not-included { color: #bac3cd; }
+.comparison-note { margin: 13px 0 0; color: #8a96a5; font-size: 9px; }
+
+.steps-section { background: #f7f9fc; }
+.steps-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 13px; }
+.step-card { min-height: 162px; position: relative; padding: 18px 15px 15px; border: 1px solid #e5eaf1; border-radius: 8px; background: #fff; transition: transform .2s, box-shadow .2s; }
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 25px #10294d0b; }
+.step-number { position: absolute; top: 13px; left: 13px; color: #b0bfce; font: 600 10px "Alexandria", sans-serif; }
+.step-icon { width: 37px; height: 37px; display: grid; place-items: center; margin-bottom: 16px; border-radius: 9px; background: #eaf6fb; color: #258cbd; font-size: 19px; }
+.step-card:nth-child(3n+2) .step-icon { background: #eef2fb; color: #6278bb; }
+.step-card:nth-child(3n) .step-icon { background: #eaf7f3; color: #29977f; }
+.step-card p { margin: 0; color: #485a70; font-size: 10px; font-weight: 600; line-height: 1.9; }
+.step-arrow { position: absolute; z-index: 1; top: 30px; left: -17px; display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid #e3e9ef; border-radius: 50%; background: #f7f9fc; color: #98a9b9; font-size: 10px; }
+
+.faq-section { background: #fff; }
+.faq-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: start; }
+.faq-intro { position: sticky; top: 115px; }
+.faq-intro h2 { margin-top: 13px; font-size: 35px; }
+.faq-intro > p { max-width: 300px; margin: 0; color: #78869a; font-size: 12px; line-height: 2; }
+.faq-contact { display: inline-flex; gap: 8px; margin-top: 20px; color: #147cb8; font-size: 11px; font-weight: 700; }
+.faq-list { border-top: 1px solid #e7ecf1; }
+.faq-item { border-bottom: 1px solid #e7ecf1; }
+.faq-item summary { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 0; list-style: none; color: #2c3d54; cursor: pointer; font-size: 12px; font-weight: 600; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-plus { position: relative; flex: 0 0 23px; width: 23px; height: 23px; border: 1px solid #dce5ec; border-radius: 50%; }
+.faq-plus::before, .faq-plus::after { position: absolute; top: 10px; right: 6px; width: 9px; height: 1px; background: #71849a; content: ""; transition: transform .2s; }
+.faq-plus::after { transform: rotate(90deg); }
+.faq-item[open] .faq-plus { border-color: #b8dfec; background: #eef9fc; }
+.faq-item[open] .faq-plus::after { transform: rotate(0); }
+.faq-item > p { max-width: 650px; margin: -3px 0 17px; color: #748297; font-size: 11px; line-height: 2; }
+
+.contact-section { padding-block: 45px 64px; background: #f7f9fc; }
+.contact-banner { min-height: 300px; position: relative; overflow: hidden; display: flex; align-items: center; padding: 47px 58px; border-radius: 12px; background: linear-gradient(110deg, #10294d 0%, #0b1b36 66%, #0b2948 100%); }
+.contact-copy { position: relative; z-index: 2; max-width: 650px; }
+.light-eyebrow { color: #9edff0; }
+.contact-copy h2 { margin: 14px 0 9px; color: #fff; font: 700 clamp(27px, 3vw, 36px)/1.5 "Alexandria", var(--font); }
+.contact-copy h2 span { color: #64c7e5; }
+.contact-copy > p { margin: 0; color: #b1c1d3; font-size: 12px; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 24px; }
+.button-white { min-height: 46px; background: #fff; color: #153357; font-size: 11px; }
+.button-white:hover { background: #e9f7fb; }
+.button-ghost { min-height: 46px; border: 1px solid #7187a0; color: #e2eaf2; background: transparent; font-size: 11px; }
+.button-ghost:hover { border-color: #c3e5ef; color: #fff; }
+.contact-details { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; gap: 20px; padding: 25px 7px 0; }
+.contact-details > a, .contact-details > div:not(.contact-brand) { display: flex; align-items: center; gap: 9px; }
+.detail-icon { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #e2e9f0; border-radius: 7px; background: #fff; color: #2689bc; font-size: 13px; }
+.contact-details > a > span:last-child, .contact-details > div > span:last-child { display: grid; gap: 3px; }
+.contact-details small { color: #8794a5; font-size: 8px; }
+.contact-details b { color: #344860; font-size: 9px; font-weight: 600; }
+.site-footer { padding-block: 16px; border-top: 1px solid #e9edf2; background: #fff; color: #8a96a5; font-size: 9px; }
+.site-footer .container { display: flex; align-items: center; justify-content: space-between; }
+.site-footer a { color: #60758c; }
+
+.order-dialog { width: min(590px, calc(100% - 28px)); max-height: min(92vh, 850px); padding: 0; overflow: auto; border: 0; border-radius: 12px; color: var(--ink); background: #fff; box-shadow: 0 28px 100px #071b3540; }
+.order-dialog::backdrop { background: #08182bbb; backdrop-filter: blur(3px); }
+.dialog-panel { position: relative; padding: 31px 34px 25px; }
+.dialog-close { position: absolute; top: 17px; left: 17px; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #e7ebf0; border-radius: 50%; background: #fff; color: #708096; cursor: pointer; font-size: 22px; line-height: 1; }
+.dialog-heading { margin-bottom: 17px; }
+.dialog-heading h2 { margin: 9px 0 3px; color: var(--navy); font: 700 25px "Alexandria", var(--font); }
+.dialog-heading p { margin: 0; color: #7d899a; font-size: 10px; }
+.order-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 15px; padding: 15px; border: 1px solid #e4edf3; border-radius: 8px; background: #f7fafc; }
+.order-summary > div { display: grid; gap: 5px; }
+.order-summary span { color: #8491a2; font-size: 9px; }
+.order-summary b { color: #334861; font-size: 10px; }
+.order-summary b small { color: #8290a1; font-size: 8px; font-weight: 400; }
+.order-summary .summary-total { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid #e4eaf0; }
+.order-summary .summary-total b { color: #147ab7; font: 700 17px "Alexandria", sans-serif; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 12px; margin-top: 19px; }
+.form-grid label { display: grid; gap: 6px; color: #43546a; font-size: 10px; font-weight: 600; }
+.form-grid label > span { display: inline; color: #dd6565; }
+.form-grid input, .form-grid select, .form-grid textarea { width: 100%; min-height: 41px; padding: 9px 11px; border: 1px solid #dfe6ed; border-radius: 6px; outline: none; color: #30435b; background: #fff; font-size: 10px; transition: border-color .2s, box-shadow .2s; }
+.form-grid textarea { min-height: 69px; resize: vertical; }
+.form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { border-color: #50acd1; box-shadow: 0 0 0 3px #50acd11c; }
+.form-grid input::placeholder, .form-grid textarea::placeholder { color: #a7b1bf; }
+.form-grid .notes-field { grid-column: 1 / -1; }
+.form-grid label[hidden] { display: none; }
+.form-error { margin: 11px 0 0; color: #bd4545; font-size: 10px; }
+.submit-order { width: 100%; margin-top: 17px; }
+.privacy-note { display: block; margin-top: 9px; color: #909baa; font-size: 8px; text-align: center; }
+
+@media (max-width: 1000px) {
+  .container { width: min(100% - 40px, 900px); }
+  .main-nav { gap: 17px; font-size: 11px; }
+  .hero-grid { gap: 25px; }
+  .hero h1 { font-size: 39px; }
+  .dashboard { transform: scale(.94) perspective(1200px) rotateY(-5deg) rotateX(2deg); }
+  .plans-grid { gap: 12px; }
+  .plan-card { padding-inline: 16px; }
+  .plan-audience { font-size: 9px; }
+  .steps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .step-arrow { display: none; }
+  .faq-layout { gap: 45px; }
+  .contact-art { left: 3%; transform: translateY(-50%) scale(.85); }
+  .contact-details { grid-template-columns: 1.3fr 1.2fr 1fr .7fr; gap: 12px; }
+}
+@media (max-width: 760px) {
+  html { scroll-padding-top: 70px; }
+  .container { width: min(100% - 34px, 600px); }
+  .section { padding-block: 75px; }
+  .site-header { height: 66px; }
+  .brand-logo { width: 37px; height: 37px; }
+  .brand-copy strong { font-size: 18px; }
+  .brand-copy small { font-size: 5px; }
+  .nav-wrap { gap: 12px; }
+  .header-cta { margin-right: auto; min-height: 36px; padding-inline: 11px; font-size: 9px; }
+  .menu-toggle { width: 35px; height: 35px; display: flex; flex-direction: column; justify-content: center; gap: 5px; padding: 8px; border: 1px solid #e3e9f0; border-radius: 6px; background: white; cursor: pointer; }
+  .menu-toggle span { height: 1.5px; width: 100%; background: #263e59; }
+  .main-nav { position: absolute; top: 65px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 18px 13px; border-bottom: 1px solid #e7ebf0; background: #fff; box-shadow: 0 12px 20px #0d29420d; }
+  .main-nav.nav-open { display: flex; flex-direction: column; }
+  .main-nav a { padding: 11px 3px; border-bottom: 1px solid #f0f2f5; }
+  .main-nav a:last-child { border-bottom: 0; }
+  .hero { padding-top: 53px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 15px; }
+  .hero-copy { padding-bottom: 0; }
+  .hero h1 { max-width: 570px; margin-top: 18px; font-size: clamp(33px, 8.7vw, 45px); line-height: 1.55; }
+  .hero-copy > p { font-size: 13px; }
+  .hero-actions { margin-top: 22px; }
+  .hero-actions .button { flex: 1 1 auto; min-height: 47px; padding-inline: 13px; font-size: 11px; }
+  .hero-proof { margin-top: 23px; font-size: 9px; }
+  .hero-visual { min-height: 375px; margin-top: 3px; }
+  .dashboard { width: min(100%, 460px); transform: scale(.9); }
+  .visual-glow { width: 355px; height: 355px; }
+  .orbit-one { width: 350px; height: 200px; }
+  .orbit-two { width: 365px; height: 235px; }
+  .float-box { right: 0; top: 45px; }
+  .float-chart { left: 0; bottom: 27px; }
+  .visual-caption { bottom: -3px; right: -2px; }
+  .hero-bottom { padding-block: 17px; font-size: 8px; }
+  .section-heading { margin-bottom: 27px; }
+  .section-heading h2 { font-size: 29px; }
+  .section-heading > p { font-size: 11px; }
+  .billing-note { width: 100%; justify-content: center; text-align: right; font-size: 9px; line-height: 1.8; }
+  .plans-grid { grid-template-columns: 1fr; gap: 23px; max-width: 470px; margin-inline: auto; }
+  .plan-card { padding: 22px 20px 17px; }
+  .plan-card h3 { font-size: 24px; }
+  .plan-description { min-height: unset; }
+  .feature-list { gap: 8px; }
+  .hosting-preview { margin-top: 18px; }
+  .custom-note { align-items: flex-start; flex-wrap: wrap; padding: 14px; }
+  .custom-note p { flex-basis: calc(100% - 39px); }
+  .custom-note > a { margin-right: 33px; }
+  .comparison-wrap { overflow-x: auto; border-radius: 7px; }
+  .comparison-table { min-width: 620px; font-size: 10px; }
+  .comparison-table th, .comparison-table td { padding: 12px 9px; }
+  .comparison-table thead th { font-size: 11px; }
+  .comparison-table thead th:first-child { width: 28%; }
+  .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .step-card { min-height: 140px; padding: 15px 12px; }
+  .faq-layout { grid-template-columns: 1fr; gap: 24px; }
+  .faq-intro { position: static; }
+  .faq-intro h2 { font-size: 30px; }
+  .faq-intro > p { max-width: 420px; }
+  .faq-contact { margin-top: 12px; }
+  .faq-item summary { padding-block: 15px; font-size: 11px; }
+  .contact-section { padding-block: 30px 46px; }
+  .contact-banner { min-height: 325px; padding: 35px 25px; }
+  .contact-copy { max-width: 100%; }
+  .contact-copy h2 { max-width: 400px; font-size: 28px; }
+  .contact-copy > p { max-width: 340px; font-size: 11px; line-height: 1.9; }
+  .contact-actions { max-width: 340px; }
+  .contact-actions .button { min-height: 44px; padding-inline: 13px; font-size: 9px; }
+  .contact-details { grid-template-columns: 1fr 1fr; gap: 19px 11px; padding-inline: 3px; }
+  .site-footer { font-size: 8px; }
+  .dialog-panel { padding: 27px 20px 21px; }
+}
+@media (max-width: 420px) {
+  .container { width: calc(100% - 28px); }
+  .header-cta { font-size: 8px; }
+  .hero-actions { gap: 8px; }
+  .hero-actions .button { font-size: 10px; gap: 7px; }
+  .hero-proof { gap: 6px; font-size: 8px; }
+  .hero-visual { min-height: 325px; }
+  .dashboard { transform: scale(.77); }
+  .visual-caption { right: 0; }
+  .hero-bottom { gap: 9px; font-size: 7px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .notes-field { grid-column: auto; }
+  .order-summary { gap: 10px; padding: 12px; }
+  .order-summary b { font-size: 9px; }
+  .contact-details { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
